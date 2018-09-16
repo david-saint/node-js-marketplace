@@ -1,12 +1,15 @@
-exports.storesMiddleware = (req, res, next) => {
-  req.name = 'David Saint';
-  next();
-};
-
 exports.homePage = (req, res) => {
   const data = {
     title: '🎶🤷‍♀️✌',
-    name: req.name,
+    name: 'David',
   };
   res.render('hello', data);
+};
+
+exports.addStore = (req, res) => {
+  res.render('editStore', { title: 'Add Store' });
+};
+
+exports.createStore = (req, res) => {
+  res.json(req.body);
 };
