@@ -10,8 +10,9 @@ router.get('/', (req, res) => {
     age: req.query.age || 21,
     cool: req.query.cool,
     message: 'Hey! It works! ❤🔥',
+    title: '😪🎶😜 fake ass title',
   };
-  res.render('hello');
+  res.render('hello', wes);
 });
 
 module.exports = router;
