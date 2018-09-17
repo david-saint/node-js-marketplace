@@ -2,10 +2,12 @@ const mongoose = require('mongoose');
 // Model
 const Store = mongoose.model('Store');
 
-exports.homePage = (req, res) => {
+exports.homePage = async (req, res) => {
+  const stores = await Store.find();
   const data = {
     title: '🎶🤷‍♀️✌',
     name: 'David',
+    stores,
   };
   res.render('hello', data);
 };

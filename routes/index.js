@@ -6,7 +6,7 @@ const storeController = require('../controllers/storeController');
 const router = express.Router();
 
 // Do work here
-router.get('/', storeController.homePage);
+router.get('/', catchErrors(storeController.homePage));
 router.get('/add', storeController.addStore);
 router.post('/add', catchErrors(storeController.createStore));
 router.post('/add/:id', catchErrors(storeController.updateStore));
